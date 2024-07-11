@@ -25,7 +25,14 @@ Partial Class FormDirect
         Me.components = New System.ComponentModel.Container()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.ZedGraphControl1 = New ZedGraph.ZedGraphControl()
         Me.GBSpecControl = New System.Windows.Forms.GroupBox()
+        Me.CBTG = New System.Windows.Forms.CheckBox()
+        Me.CBTGLvl = New System.Windows.Forms.ComboBox()
+        Me.LTGLvl = New System.Windows.Forms.Label()
+        Me.LFChannel = New System.Windows.Forms.Label()
+        Me.ComboBoxChannels = New System.Windows.Forms.ComboBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.LMeasReceiver = New System.Windows.Forms.Label()
         Me.LPort = New System.Windows.Forms.Label()
@@ -52,20 +59,14 @@ Partial Class FormDirect
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.SerialPort = New System.IO.Ports.SerialPort(Me.components)
         Me.timerScanning = New System.Windows.Forms.Timer(Me.components)
-        Me.LFChannel = New System.Windows.Forms.Label()
-        Me.CBFChannel = New System.Windows.Forms.ComboBox()
-        Me.CBTG = New System.Windows.Forms.CheckBox()
-        Me.CBTGLvl = New System.Windows.Forms.ComboBox()
-        Me.LTGLvl = New System.Windows.Forms.Label()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.ZedGraphControl1 = New ZedGraph.ZedGraphControl()
+        Me.ButtonStartDFS = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.GBSpecControl.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.MenuStrip.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -91,19 +92,90 @@ Partial Class FormDirect
         Me.TabPage1.Text = "TabPage1"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'GroupBox2
+        '
+        Me.GroupBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox2.Controls.Add(Me.ZedGraphControl1)
+        Me.GroupBox2.Location = New System.Drawing.Point(6, 115)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(949, 371)
+        Me.GroupBox2.TabIndex = 27
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Frequency Plot"
+        '
+        'ZedGraphControl1
+        '
+        Me.ZedGraphControl1.IsShowPointValues = False
+        Me.ZedGraphControl1.Location = New System.Drawing.Point(-6, 22)
+        Me.ZedGraphControl1.Name = "ZedGraphControl1"
+        Me.ZedGraphControl1.PointValueFormat = "G"
+        Me.ZedGraphControl1.Size = New System.Drawing.Size(796, 352)
+        Me.ZedGraphControl1.TabIndex = 9
+        '
         'GBSpecControl
         '
+        Me.GBSpecControl.Controls.Add(Me.ButtonStartDFS)
         Me.GBSpecControl.Controls.Add(Me.CBTG)
         Me.GBSpecControl.Controls.Add(Me.CBTGLvl)
         Me.GBSpecControl.Controls.Add(Me.LTGLvl)
         Me.GBSpecControl.Controls.Add(Me.LFChannel)
-        Me.GBSpecControl.Controls.Add(Me.CBFChannel)
+        Me.GBSpecControl.Controls.Add(Me.ComboBoxChannels)
         Me.GBSpecControl.Location = New System.Drawing.Point(354, 6)
         Me.GBSpecControl.Name = "GBSpecControl"
         Me.GBSpecControl.Size = New System.Drawing.Size(601, 100)
         Me.GBSpecControl.TabIndex = 26
         Me.GBSpecControl.TabStop = False
         Me.GBSpecControl.Text = "Spectrum Control"
+        '
+        'CBTG
+        '
+        Me.CBTG.AutoSize = True
+        Me.CBTG.Location = New System.Drawing.Point(6, 62)
+        Me.CBTG.Name = "CBTG"
+        Me.CBTG.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.CBTG.Size = New System.Drawing.Size(60, 17)
+        Me.CBTG.TabIndex = 65
+        Me.CBTG.Text = "TG ON"
+        Me.CBTG.UseVisualStyleBackColor = True
+        '
+        'CBTGLvl
+        '
+        Me.CBTGLvl.FormattingEnabled = True
+        Me.CBTGLvl.Items.AddRange(New Object() {"0 dBm", "-1 dBm", "-2 dBm", "-3 dBm", "-4 dBm", "-5 dBm", "-6 dBm", "-7 dBm", "-8 dBm", "-9 dBm", "-10 dBm", "-11 dBm", "-12 dBm", "-13 dBm", "-14 dBm", "-15 dBm", "-16 dBm", "-17 dBm", "-18 dBm", "-19 dBm", "-20 dBm", "-21 dBm", "-22 dBm", "-23 dBm", "-24 dBm", "-25 dBm", "-26 dBm", "-27 dBm", "-28 dBm", "-29 dBm", "-30 dBm", "-31 dBm", "-32 dBm", "-33 dBm", "-34 dBm", "-35 dBm", "-36 dBm", "-37 dBm", "-38 dBm", "-39 dBm", "-40 dBm"})
+        Me.CBTGLvl.Location = New System.Drawing.Point(140, 58)
+        Me.CBTGLvl.Name = "CBTGLvl"
+        Me.CBTGLvl.Size = New System.Drawing.Size(86, 21)
+        Me.CBTGLvl.TabIndex = 64
+        '
+        'LTGLvl
+        '
+        Me.LTGLvl.AutoSize = True
+        Me.LTGLvl.Location = New System.Drawing.Point(83, 63)
+        Me.LTGLvl.Name = "LTGLvl"
+        Me.LTGLvl.Size = New System.Drawing.Size(51, 13)
+        Me.LTGLvl.TabIndex = 63
+        Me.LTGLvl.Text = "TG Level"
+        '
+        'LFChannel
+        '
+        Me.LFChannel.AutoSize = True
+        Me.LFChannel.Location = New System.Drawing.Point(7, 26)
+        Me.LFChannel.Name = "LFChannel"
+        Me.LFChannel.Size = New System.Drawing.Size(99, 13)
+        Me.LFChannel.TabIndex = 62
+        Me.LFChannel.Text = "Frequency Channel"
+        '
+        'ComboBoxChannels
+        '
+        Me.ComboBoxChannels.AllowDrop = True
+        Me.ComboBoxChannels.FormattingEnabled = True
+        Me.ComboBoxChannels.Items.AddRange(New Object() {"36 (5180 MHz)", "40 (5200 MHz)", "44 (5220 MHz)", "48 (5240 MHz)", "52 (5260 MHz)", "56 (5280 MHz)", "60 (5300 MHz)", "64 (5320 MHz)", "149 (5745 MHz)", "153 (5765 MHz)", "157 (5785 MHz)", "161 (5805 MHz)", "165 (5825 MHz)"})
+        Me.ComboBoxChannels.Location = New System.Drawing.Point(117, 23)
+        Me.ComboBoxChannels.Name = "ComboBoxChannels"
+        Me.ComboBoxChannels.Size = New System.Drawing.Size(109, 21)
+        Me.ComboBoxChannels.TabIndex = 61
         '
         'GroupBox1
         '
@@ -155,7 +227,7 @@ Partial Class FormDirect
         Me.TextIP.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TextIP.Size = New System.Drawing.Size(90, 20)
         Me.TextIP.TabIndex = 29
-        Me.TextIP.Text = "192.168.10.100"
+        Me.TextIP.Text = "192.168.1.4"
         '
         'TextPort
         '
@@ -296,75 +368,14 @@ Partial Class FormDirect
         '
         Me.timerScanning.Interval = 1000
         '
-        'LFChannel
+        'ButtonStartDFS
         '
-        Me.LFChannel.AutoSize = True
-        Me.LFChannel.Location = New System.Drawing.Point(7, 26)
-        Me.LFChannel.Name = "LFChannel"
-        Me.LFChannel.Size = New System.Drawing.Size(99, 13)
-        Me.LFChannel.TabIndex = 62
-        Me.LFChannel.Text = "Frequency Channel"
-        '
-        'CBFChannel
-        '
-        Me.CBFChannel.AllowDrop = True
-        Me.CBFChannel.FormattingEnabled = True
-        Me.CBFChannel.Items.AddRange(New Object() {"auto", "36 (5180 MHz)", "40 (5200 MHz)", "44 (5220 MHz)", "48 (5240 MHz)", "52 (5260 MHz)", "56 (5280 MHz)", "60 (5300 MHz)", "64 (5320 MHz)", "149 (5745 MHz)", "153 (5765 MHz)", "157 (5785 MHz)", "161 (5805 MHz)", "165 (5825 MHz)"})
-        Me.CBFChannel.Location = New System.Drawing.Point(117, 23)
-        Me.CBFChannel.Name = "CBFChannel"
-        Me.CBFChannel.Size = New System.Drawing.Size(109, 21)
-        Me.CBFChannel.TabIndex = 61
-        '
-        'CBTG
-        '
-        Me.CBTG.AutoSize = True
-        Me.CBTG.Location = New System.Drawing.Point(6, 62)
-        Me.CBTG.Name = "CBTG"
-        Me.CBTG.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.CBTG.Size = New System.Drawing.Size(60, 17)
-        Me.CBTG.TabIndex = 65
-        Me.CBTG.Text = "TG ON"
-        Me.CBTG.UseVisualStyleBackColor = True
-        '
-        'CBTGLvl
-        '
-        Me.CBTGLvl.FormattingEnabled = True
-        Me.CBTGLvl.Items.AddRange(New Object() {"0 dBm", "-1 dBm", "-2 dBm", "-3 dBm", "-4 dBm", "-5 dBm", "-6 dBm", "-7 dBm", "-8 dBm", "-9 dBm", "-10 dBm", "-11 dBm", "-12 dBm", "-13 dBm", "-14 dBm", "-15 dBm", "-16 dBm", "-17 dBm", "-18 dBm", "-19 dBm", "-20 dBm", "-21 dBm", "-22 dBm", "-23 dBm", "-24 dBm", "-25 dBm", "-26 dBm", "-27 dBm", "-28 dBm", "-29 dBm", "-30 dBm", "-31 dBm", "-32 dBm", "-33 dBm", "-34 dBm", "-35 dBm", "-36 dBm", "-37 dBm", "-38 dBm", "-39 dBm", "-40 dBm"})
-        Me.CBTGLvl.Location = New System.Drawing.Point(140, 58)
-        Me.CBTGLvl.Name = "CBTGLvl"
-        Me.CBTGLvl.Size = New System.Drawing.Size(86, 21)
-        Me.CBTGLvl.TabIndex = 64
-        '
-        'LTGLvl
-        '
-        Me.LTGLvl.AutoSize = True
-        Me.LTGLvl.Location = New System.Drawing.Point(83, 63)
-        Me.LTGLvl.Name = "LTGLvl"
-        Me.LTGLvl.Size = New System.Drawing.Size(51, 13)
-        Me.LTGLvl.TabIndex = 63
-        Me.LTGLvl.Text = "TG Level"
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox2.Controls.Add(Me.ZedGraphControl1)
-        Me.GroupBox2.Location = New System.Drawing.Point(6, 115)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(949, 371)
-        Me.GroupBox2.TabIndex = 27
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Frequency Plot"
-        '
-        'ZedGraphControl1
-        '
-        Me.ZedGraphControl1.IsShowPointValues = False
-        Me.ZedGraphControl1.Location = New System.Drawing.Point(161, 19)
-        Me.ZedGraphControl1.Name = "ZedGraphControl1"
-        Me.ZedGraphControl1.PointValueFormat = "G"
-        Me.ZedGraphControl1.Size = New System.Drawing.Size(788, 352)
-        Me.ZedGraphControl1.TabIndex = 9
+        Me.ButtonStartDFS.Location = New System.Drawing.Point(232, 23)
+        Me.ButtonStartDFS.Name = "ButtonStartDFS"
+        Me.ButtonStartDFS.Size = New System.Drawing.Size(84, 56)
+        Me.ButtonStartDFS.TabIndex = 67
+        Me.ButtonStartDFS.Text = "Start Measurement"
+        Me.ButtonStartDFS.UseVisualStyleBackColor = True
         '
         'FormDirect
         '
@@ -379,6 +390,7 @@ Partial Class FormDirect
         Me.Text = "Dynamic Frequency Selection Software"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
+        Me.GroupBox2.ResumeLayout(False)
         Me.GBSpecControl.ResumeLayout(False)
         Me.GBSpecControl.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
@@ -387,7 +399,6 @@ Partial Class FormDirect
         Me.StatusStrip1.PerformLayout()
         Me.MenuStrip.ResumeLayout(False)
         Me.MenuStrip.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -422,10 +433,11 @@ Partial Class FormDirect
     Friend WithEvents SerialPort As IO.Ports.SerialPort
     Friend WithEvents timerScanning As Timer
     Friend WithEvents LFChannel As Label
-    Friend WithEvents CBFChannel As ComboBox
+    Friend WithEvents ComboBoxChannels As ComboBox
     Friend WithEvents CBTG As CheckBox
     Friend WithEvents CBTGLvl As ComboBox
     Friend WithEvents LTGLvl As Label
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents ZedGraphControl1 As ZedGraph.ZedGraphControl
+    Friend WithEvents ButtonStartDFS As Button
 End Class

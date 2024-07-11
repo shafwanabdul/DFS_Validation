@@ -87,7 +87,6 @@ Public Class FormDirect
         End While
         Threading.Thread.Sleep(750)
         Return 0
-
     End Function
     Private Function CheckSN(void) As Integer
         TS_ETH_TX.Text = "*IDN?"
@@ -142,6 +141,10 @@ Public Class FormDirect
 
     End Sub
 
+    Private Sub ButtonStartDFS_Click(sender As Object, e As EventArgs) Handles ButtonStartDFS.Click
+
+    End Sub
+
     Private Sub ZedFAF_Load(sender As Object, e As EventArgs)
 
     End Sub
@@ -151,10 +154,6 @@ Public Class FormDirect
     End Sub
 
     Private Sub CBTGLvl_SelectedIndexChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub BSetSPACtrl_Click(sender As Object, e As EventArgs) Handles btnStartStop.Click
 
     End Sub
 
