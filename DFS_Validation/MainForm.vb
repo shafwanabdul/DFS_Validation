@@ -27,7 +27,6 @@ Public Class FormDirect
     Dim RegisteredSPA As String = "DSA8E261100012"
     Private Sub FormDirect_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TCPconnected = False
-        btnStartStop.Enabled = False
     End Sub
 
     Private Function SendTCP(ByVal CMD As String)
@@ -73,7 +72,6 @@ Public Class FormDirect
             BConnect.Enabled = False
             If clientSocket.Connected Then
                 TCPconnected = True
-                btnStartStop.Enabled = True
             End If
         End If
     End Sub
@@ -116,45 +114,6 @@ Public Class FormDirect
         End If
     End Function
 
-    Private Sub FrequencyScannerForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Populate ComboBox with frequency bands
-        cmbFrequency.Items.Add("1 GHz")
-        cmbFrequency.Items.Add("2 GHz")
-        cmbFrequency.Items.Add("3 GHz")
-        cmbFrequency.Items.Add("4 GHz")
-        cmbFrequency.Items.Add("5 GHz")
-        ' Set initial status
-        lblStatus.Text = "Status: Idle"
-    End Sub
-
-    Private Sub btnStartStop_Click(sender As Object, e As EventArgs)
-        If btnStartStop.Text = "Start Scanning" Then
-            ' Start scanning
-            btnStartStop.Text = "Stop Scanning"
-            lblStatus.Text = "Status: Scanning"
-            timerScanning.Start()
-        Else
-            ' Stop scanning
-            btnStartStop.Text = "Start Scanning"
-            lblStatus.Text = "Status: Idle"
-            timerScanning.Stop()
-        End If
-    End Sub
-
-    Private Sub timerScanning_Tick(sender As Object, e As EventArgs) Handles timerScanning.Tick
-        ' Simulate scanning progress
-        If progressBarScanning.Value < progressBarScanning.Maximum Then
-            progressBarScanning.Value += 10
-        Else
-            progressBarScanning.Value = 0
-            ' Simulate adding available frequency
-            lstAvailableFrequencies.Items.Add("Frequency Detected: " & cmbFrequency.SelectedItem)
-            ' Simulate signal strength
-            txtSignalStrength.Text = "Signal Strength: " & (New Random()).Next(0, 100).ToString()
-            ' Simulate interference log
-            lstInterferenceLog.Items.Add("Interference Detected at: " & cmbFrequency.SelectedItem & " - " & DateTime.Now.ToString())
-        End If
-    End Sub
     Private Sub ToolStripStatusLabel1_Click(sender As Object, e As EventArgs)
 
     End Sub
@@ -172,6 +131,18 @@ Public Class FormDirect
     End Sub
 
     Private Sub Label3_Click_1(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub GBSpecControl_Enter(sender As Object, e As EventArgs) Handles GBSpecControl.Enter
+
+    End Sub
+
+    Private Sub CBTGLvl_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles CBTGLvl.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub ZedFAF_Load(sender As Object, e As EventArgs)
 
     End Sub
 
