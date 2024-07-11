@@ -127,7 +127,7 @@ Public Class FormDirect
         lblStatus.Text = "Status: Idle"
     End Sub
 
-    Private Sub btnStartStop_Click(sender As Object, e As EventArgs) Handles btnStartStop.Click
+    Private Sub btnStartStop_Click(sender As Object, e As EventArgs)
         If btnStartStop.Text = "Start Scanning" Then
             ' Start scanning
             btnStartStop.Text = "Stop Scanning"
@@ -159,11 +159,11 @@ Public Class FormDirect
 
     End Sub
 
-    Private Sub LBDFFCenter_Click(sender As Object, e As EventArgs) Handles LFBand.Click
+    Private Sub LBDFFCenter_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub cmbFrequency_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbFrequency.SelectedIndexChanged
+    Private Sub cmbFrequency_SelectedIndexChanged(sender As Object, e As EventArgs)
 
     End Sub
 

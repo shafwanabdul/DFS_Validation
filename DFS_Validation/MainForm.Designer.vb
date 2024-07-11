@@ -26,18 +26,6 @@ Partial Class FormDirect
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GBSpecControl = New System.Windows.Forms.GroupBox()
-        Me.GBSAControl = New System.Windows.Forms.GroupBox()
-        Me.lblStatus = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.lstInterferenceLog = New System.Windows.Forms.ListBox()
-        Me.LSignalStrength = New System.Windows.Forms.Label()
-        Me.txtSignalStrength = New System.Windows.Forms.TextBox()
-        Me.lstAvailableFrequencies = New System.Windows.Forms.ListBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.progressBarScanning = New System.Windows.Forms.ProgressBar()
-        Me.cmbFrequency = New System.Windows.Forms.ComboBox()
-        Me.btnStartStop = New System.Windows.Forms.Button()
-        Me.LFBand = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.LMeasReceiver = New System.Windows.Forms.Label()
         Me.LPort = New System.Windows.Forms.Label()
@@ -69,7 +57,6 @@ Partial Class FormDirect
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GBSpecControl.SuspendLayout()
-        Me.GBSAControl.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.MenuStrip.SuspendLayout()
@@ -101,126 +88,12 @@ Partial Class FormDirect
         '
         Me.GBSpecControl.Controls.Add(Me.LFChannel)
         Me.GBSpecControl.Controls.Add(Me.CBFChannel)
-        Me.GBSpecControl.Controls.Add(Me.GBSAControl)
         Me.GBSpecControl.Location = New System.Drawing.Point(354, 6)
         Me.GBSpecControl.Name = "GBSpecControl"
         Me.GBSpecControl.Size = New System.Drawing.Size(601, 376)
         Me.GBSpecControl.TabIndex = 26
         Me.GBSpecControl.TabStop = False
         Me.GBSpecControl.Text = "Spectrum Control"
-        '
-        'GBSAControl
-        '
-        Me.GBSAControl.Controls.Add(Me.lblStatus)
-        Me.GBSAControl.Controls.Add(Me.Label2)
-        Me.GBSAControl.Controls.Add(Me.lstInterferenceLog)
-        Me.GBSAControl.Controls.Add(Me.LSignalStrength)
-        Me.GBSAControl.Controls.Add(Me.txtSignalStrength)
-        Me.GBSAControl.Controls.Add(Me.lstAvailableFrequencies)
-        Me.GBSAControl.Controls.Add(Me.Label1)
-        Me.GBSAControl.Controls.Add(Me.progressBarScanning)
-        Me.GBSAControl.Controls.Add(Me.cmbFrequency)
-        Me.GBSAControl.Controls.Add(Me.btnStartStop)
-        Me.GBSAControl.Controls.Add(Me.LFBand)
-        Me.GBSAControl.Location = New System.Drawing.Point(265, 19)
-        Me.GBSAControl.Name = "GBSAControl"
-        Me.GBSAControl.Size = New System.Drawing.Size(330, 346)
-        Me.GBSAControl.TabIndex = 43
-        Me.GBSAControl.TabStop = False
-        Me.GBSAControl.Text = "Device Setting"
-        '
-        'lblStatus
-        '
-        Me.lblStatus.AutoSize = True
-        Me.lblStatus.Location = New System.Drawing.Point(24, 284)
-        Me.lblStatus.Name = "lblStatus"
-        Me.lblStatus.Size = New System.Drawing.Size(60, 13)
-        Me.lblStatus.TabIndex = 59
-        Me.lblStatus.Text = "Status: Idle"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(11, 220)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(85, 13)
-        Me.Label2.TabIndex = 58
-        Me.Label2.Text = "Interference Log" & Global.Microsoft.VisualBasic.ChrW(10)
-        '
-        'lstInterferenceLog
-        '
-        Me.lstInterferenceLog.FormattingEnabled = True
-        Me.lstInterferenceLog.Location = New System.Drawing.Point(121, 220)
-        Me.lstInterferenceLog.Name = "lstInterferenceLog"
-        Me.lstInterferenceLog.Size = New System.Drawing.Size(203, 56)
-        Me.lstInterferenceLog.TabIndex = 57
-        '
-        'LSignalStrength
-        '
-        Me.LSignalStrength.AutoSize = True
-        Me.LSignalStrength.Location = New System.Drawing.Point(11, 197)
-        Me.LSignalStrength.Name = "LSignalStrength"
-        Me.LSignalStrength.Size = New System.Drawing.Size(79, 13)
-        Me.LSignalStrength.TabIndex = 56
-        Me.LSignalStrength.Text = "Signal Strength"
-        '
-        'txtSignalStrength
-        '
-        Me.txtSignalStrength.Location = New System.Drawing.Point(121, 194)
-        Me.txtSignalStrength.Name = "txtSignalStrength"
-        Me.txtSignalStrength.ReadOnly = True
-        Me.txtSignalStrength.Size = New System.Drawing.Size(100, 20)
-        Me.txtSignalStrength.TabIndex = 55
-        '
-        'lstAvailableFrequencies
-        '
-        Me.lstAvailableFrequencies.FormattingEnabled = True
-        Me.lstAvailableFrequencies.Location = New System.Drawing.Point(121, 92)
-        Me.lstAvailableFrequencies.Name = "lstAvailableFrequencies"
-        Me.lstAvailableFrequencies.Size = New System.Drawing.Size(203, 95)
-        Me.lstAvailableFrequencies.TabIndex = 54
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(11, 92)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(103, 13)
-        Me.Label1.TabIndex = 53
-        Me.Label1.Text = "Available Frequency"
-        '
-        'progressBarScanning
-        '
-        Me.progressBarScanning.Location = New System.Drawing.Point(14, 54)
-        Me.progressBarScanning.Name = "progressBarScanning"
-        Me.progressBarScanning.Size = New System.Drawing.Size(216, 23)
-        Me.progressBarScanning.TabIndex = 52
-        '
-        'cmbFrequency
-        '
-        Me.cmbFrequency.FormattingEnabled = True
-        Me.cmbFrequency.Location = New System.Drawing.Point(121, 27)
-        Me.cmbFrequency.Name = "cmbFrequency"
-        Me.cmbFrequency.Size = New System.Drawing.Size(109, 21)
-        Me.cmbFrequency.TabIndex = 51
-        '
-        'btnStartStop
-        '
-        Me.btnStartStop.Location = New System.Drawing.Point(245, 27)
-        Me.btnStartStop.Name = "btnStartStop"
-        Me.btnStartStop.Size = New System.Drawing.Size(79, 50)
-        Me.btnStartStop.TabIndex = 49
-        Me.btnStartStop.Text = "Start Scanning"
-        Me.btnStartStop.UseVisualStyleBackColor = True
-        '
-        'LFBand
-        '
-        Me.LFBand.AutoSize = True
-        Me.LFBand.Location = New System.Drawing.Point(11, 30)
-        Me.LFBand.Name = "LFBand"
-        Me.LFBand.Size = New System.Drawing.Size(85, 13)
-        Me.LFBand.TabIndex = 45
-        Me.LFBand.Text = "Frequency Band"
         '
         'GroupBox1
         '
@@ -447,8 +320,6 @@ Partial Class FormDirect
         Me.TabPage1.ResumeLayout(False)
         Me.GBSpecControl.ResumeLayout(False)
         Me.GBSpecControl.PerformLayout()
-        Me.GBSAControl.ResumeLayout(False)
-        Me.GBSAControl.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.StatusStrip1.ResumeLayout(False)
@@ -470,9 +341,6 @@ Partial Class FormDirect
     Friend WithEvents TextPort As TextBox
     Friend WithEvents BConnect As Button
     Friend WithEvents GBSpecControl As GroupBox
-    Friend WithEvents GBSAControl As GroupBox
-    Friend WithEvents btnStartStop As Button
-    Friend WithEvents LFBand As Label
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents TS_ETH_TX As ToolStripStatusLabel
     Friend WithEvents TSrtxstat As ToolStripStatusLabel
@@ -490,15 +358,6 @@ Partial Class FormDirect
     Friend WithEvents AboutToolStripMenuItem3 As ToolStripMenuItem
     Friend WithEvents SaveFileDialog1 As SaveFileDialog
     Friend WithEvents SerialPort As IO.Ports.SerialPort
-    Friend WithEvents cmbFrequency As ComboBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents progressBarScanning As ProgressBar
-    Friend WithEvents Label2 As Label
-    Friend WithEvents lstInterferenceLog As ListBox
-    Friend WithEvents LSignalStrength As Label
-    Friend WithEvents txtSignalStrength As TextBox
-    Friend WithEvents lstAvailableFrequencies As ListBox
-    Friend WithEvents lblStatus As Label
     Friend WithEvents timerScanning As Timer
     Friend WithEvents LFChannel As Label
     Friend WithEvents CBFChannel As ComboBox
